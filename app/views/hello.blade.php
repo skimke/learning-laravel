@@ -6,7 +6,8 @@
 	</head>
 	
 	<body>
-		<h1>Hello {{ $name }}</h1>
+		<h1>Home</h1>
+		{{ link_to("/users/", "Users") }}
 	</body>
 </html>
 
