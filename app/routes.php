@@ -11,14 +11,27 @@
 |
 */
 
-Route::get('/', 'PagesController@home');
-
-Route::get('/about', 'PagesController@about');
-
-Route::get('users', function() 
+Route::get('/', function() 
 {
-	$users = User::all(); // select * from users
+	// CREATE
+	// User::create([
+	// 	'username' => 'Stella',
+	// 	'password' => Hash::make('password')
+	// ]);
 
-	$user = User::find(1);
-	return $user->email;
+
+	// UPDATE
+	// $user = User::find(4);
+	// $user->username = 'Snella';
+	// $user->save();
+
+
+	// DELETE
+	// $user = User::find(5);
+	// $user->delete();
+
+	
+	// RETURN
+	// return User::all();
+	return User::orderBy('username', 'asc')->take(2)->get();
 });

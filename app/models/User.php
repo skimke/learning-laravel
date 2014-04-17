@@ -5,6 +5,10 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
+	public $timestamps = false;
+
+	protected $fillable = ['username', 'password']; // or use $guarded
+
 	/**
 	 * The database table used by the model.
 	 *
