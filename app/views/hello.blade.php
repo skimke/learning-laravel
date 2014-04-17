@@ -1,13 +1,6 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Laravel PHP Framework</title>
-	</head>
-	
-	<body>
+@extends('layouts.default')
+@section('content')
 		<h1>Home</h1>
 		{{ link_to("/users/", "Users") }}
-	</body>
-</html>
+@stop
 
