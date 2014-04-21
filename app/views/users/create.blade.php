@@ -10,14 +10,15 @@
 			</div>
 
 			<div>
-				{{ Form::label('password', "Password: ") }}
-				{{ Form::password('password') }} <!-- {{ Form::input('password', "password") }} -->				
-				{{ $errors->first('password', '<span class=error>:message</span>')}}
+				{{ Form::label('email', "Email: ") }}
+				{{ Form::text('email') }} <!-- {{ Form::input('email', "email") }} -->				
+				{{ $errors->first('email', '<span class=error>:message</span>')}}
 			</div>
 
 			<div>
-				{{ Form::label('checkbox', "I agree to the terms and conditions: ") }}
-				{{ Form::checkbox('checkbox') }}
+				{{ Form::label('password', "Password: ") }}
+				{{ Form::password('password') }} <!-- {{ Form::input('password', "password") }} -->				
+				{{ $errors->first('password', '<span class=error>:message</span>')}}
 			</div>
 
 			<div>
