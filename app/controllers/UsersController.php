@@ -2,9 +2,16 @@
 
 class UsersController extends \BaseController {
 
+	protected $user;
+
+	public function __construct(User $user) //request Eloquent object
+	{
+		$this->user = $user;
+	}
+
 	public function index()
 	{
-		$users = User::all();
+		$users = $this->user->all();
 
 		return View::make('users.index', ['users' => $users]);
 	}
@@ -23,15 +30,12 @@ class UsersController extends \BaseController {
 
 	public function store()
 	{
-		if ( ! User::isValid(Input::all()))
+		if ( ! $this->user->isValid($input = Input::all()))
 		{
-			return Redirect::back()->withInput()->withErrors(User::$errors);			
+			return Redirect::back()->withInput()->withErrors($this->user->errors);			
 		}
 
-		$user = new User;
-		$user->username = Input::get('username');
-		$user->password = Hash::make(Input::get('password'));
-		$user->save();
+		$this->$user->create($input);
 
 		return Redirect::route('users.index');
 	}
