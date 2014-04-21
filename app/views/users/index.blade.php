@@ -7,8 +7,12 @@
 				<li>{{ link_to("/users/{$user->username}", $user->username) }}</li>		
 			@endforeach
 
-			{{ link_to("/", "Back Home") }}
 		@else
-			<p>Sorry, there are no users yet.</p>
+				<p>Sorry, there are no users yet.</p>
 		@endif
+
+		<ul>
+			<li>{{ link_to("/", "Back Home") }}</li>
+			<li>{{ link_to("/users/create", "Create New User") }}</li>
+		</ul>
 @stop

@@ -4,7 +4,7 @@ class UsersController extends \BaseController {
 
 	protected $user;
 
-	public function __construct(User $user) //request Eloquent object
+	public function __construct(User $user) //request Eloquent object and create an instance
 	{
 		$this->user = $user;
 	}
@@ -30,12 +30,14 @@ class UsersController extends \BaseController {
 
 	public function store()
 	{
-		if ( ! $this->user->isValid($input = Input::all()))
+		$input = Input::all();
+
+		if ( ! $this->user->fill($input)->isValid() ) // filling attr of user object with input
 		{
 			return Redirect::back()->withInput()->withErrors($this->user->errors);			
 		}
 
-		$this->$user->create($input);
+		$this->user->save();
 
 		return Redirect::route('users.index');
 	}

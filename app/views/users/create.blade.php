@@ -24,5 +24,8 @@
 				{{ Form::submit('Create User') }}
 			</div>
 		{{ Form::close() }}
-
+		
+		<div>
+			{{ link_to("/users", "Back to All Users") }}
+		</div>
 @stop
