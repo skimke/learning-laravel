@@ -12,6 +12,6 @@
 */
 Route::get('/', 'PagesController@home');
 
-Route::get('users', 'UsersController@index');
+Route::get('about', 'PagesController@about');
 
-Route::get('users/{username}', 'UsersController@show'); 
+Route::resource('users', 'UsersController');

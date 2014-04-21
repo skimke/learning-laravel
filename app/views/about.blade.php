@@ -1,11 +1,4 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Laravel PHP Framework</title>
-	</head>
-
-	<body>
+@extends('layouts.default')
+@section('content')
 		<h1>About Us</h1>
-	</body>
-</html>
+@stop
